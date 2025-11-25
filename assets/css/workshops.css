@@ -1,0 +1,391 @@
+
+.workshops-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.workshops-title h2{
+    color: var(--color-primary);
+    margin-bottom: 2%;
+}
+
+.dark-mode .workshops-title h2{
+    color: var(--color-primary);
+}
+
+.dark-mode .workshops-title p{
+    color: white;
+}
+
+.workshops-title p{
+    text-align: center;
+    margin: auto 20%;
+    margin-bottom: 40px !important;
+}
+
+.workshops{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 325px;
+    height: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+.card h4{
+    margin-bottom: 30px;
+}
+
+.card:hover{
+    background-color: var(--color-primary-very-light);
+}
+
+.dark-mode .card:hover{
+    background-color: #2a3a6b;
+}
+
+.card p{
+    color: var(--color-black);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dark-mode .card p{
+    text-align: center;
+    color: white;
+}
+
+.card button{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    display: flex;
+    margin-top: auto;
+}
+
+.card a{
+    display: flex;
+    margin-top: auto;
+}
+
+.workshops img{
+    margin-bottom: auto;
+    width: 200px;
+    height: auto;
+}
+
+/* Container styling */
+.workshop-table {
+    margin: 40px auto;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+/* Table base */
+.workshop-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--color-bg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.dark-mode .workshop-table table{
+    background: var(--color-secondary-dark);
+}
+
+/* Header */
+.workshop-table thead th {
+    background: var(--color-primary, #4a4a4a);
+    color: white;
+    padding: 14px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+/* Body cells */
+.workshop-table td {
+    padding: 14px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Last row border removal */
+.workshop-table tr:last-child td {
+    border-bottom: none;
+}
+
+.workshop-table tbody tr:nth-child(even) {
+    background: rgb(233, 232, 232);
+}
+
+/* Alternate row background (zebra effect) */
+.dark-mode .workshop-table tbody tr:nth-child(even) {
+    background: var(--color-secondary);
+}
+
+/* Hover modern effect */
+.workshop-table tbody tr:hover {
+    background: var(--color-primary-very-light);
+    transition: 0.2s ease-in-out;
+}
+
+.dark-mode .workshop-table tbody tr:hover {
+    background: var(--color-secondary-light);
+    transition: 0.2s ease-in-out;
+}
+
+/* Make stars gold */
+.workshop-table td:nth-child(2) {
+    color: #f4c632;
+    font-size: 16px;
+}
+
+/* Rounded corners for first and last cells */
+.workshop-table td:first-child {
+    font-weight: 500;
+}
+
+.why-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px auto;
+    width: 70%;
+}
+
+.why-section h3{
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.dark-mode .why-section p{
+    color: white;
+}
+
+.learning-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto 20%;
+}
+
+.learning-section h4{
+    font-weight: bold;
+}
+
+
+.learning-section ul {
+    display: flex;
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
+    gap: 25px 40px; /* vertical and horizontal spacing */
+    list-style: circle;
+    padding: 0;
+    margin: 1%;
+}
+
+.learning-section ul li {
+    font-weight: bold;
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+.learning-section ul li::marker {
+    color: red;
+    font-size: 1.3rem;
+}
+
+/* TABLETS */
+@media (max-width: 768px) {
+    .learning-section ul {
+        justify-content: center; /* center items */
+        gap: 20px 30px;
+    }
+}
+
+/* PHONES */
+@media (max-width: 480px) {
+    .learning-section ul {
+        flex-direction: column; /* stack items vertically */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .learning-section ul li {
+        font-size: 1rem;
+    }
+}
+
+
+.highlight-text-auto {
+    color: var(--color-white);
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary) 100%);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateX(-50px); /* start off-screen left */
+    transition: opacity 0.8s ease, background-size 0.8s ease, transform 0.8s ease;
+}
+
+/* When visible */
+.highlight-text-auto.visible {
+    background-size: 100% 100%;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* QUIZ CONTAINER */
+.quiz-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.quiz-section h3 {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* EACH QUESTION BOX */
+.quiz-section .question {
+    border: 2px solid var(--color-primary);
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 20px;
+    width: 420px;
+    background: transparent;
+    text-align: left;
+}
+
+/* QUESTION TITLE */
+.quiz-section .question p {
+    font-weight: bold;
+    font-size: larger;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+/* LABEL STYLING */
+.quiz-section label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* BUTTON STYLING */
+.quiz-section button {
+    background-color: transparent;
+    color: var(--color-primary);
+    padding: 10px 18px;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.quiz-section button:hover {
+    color: white;
+    background-color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+/* RESULT BOX CONTAINER */
+#quizResult {
+    margin-top: 18px;
+    display: none; /* hidden until result is shown */
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+}
+
+/* INNER RESULT BOX */
+.quiz-result-box {
+    color: black; /* normal result text */
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ERROR MESSAGE */
+.quiz-result-box.error {
+    color: red;
+}
+
+/* DARK MODE RESULT BOX */
+.dark-mode .quiz-result-box {
+    background-color: var(--color-secondary-light);
+    color: white;
+}
+
+.dark-mode .quiz-result-box.error {
+    color: red;
+}
+
+/* DARK MODE QUESTION BOX */
+.dark-mode .quiz-section .question {
+    border-color: var(--color-primary);
+    background: transparent;
+}
+
+.dark-mode .quiz-section .question p {
+    color: white;
+}
+
+.dark-mode .quiz-section p{
+    color: var(--color-white);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .quiz-section {
+        padding: 10px;
+    }
+
+    .quiz-section .question {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .quiz-result-box {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+
+
+
+
+
